@@ -1,19 +1,35 @@
 name: protein-study
 channels:
+  - pytorch
   - conda-forge
-  - bioconda
   - defaults
 dependencies:
   - python=3.10
+  - pip
+
+  # Jupyter
   - jupyter
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
+
+  # Core scientific stack
   - numpy
   - pandas
   - matplotlib
   - seaborn
   - scikit-learn
+  - tqdm
+
+  # PyTorch (CPU — change to pytorch-cuda if you have a GPU)
   - pytorch
-  - pip
+  - torchvision
+  - cpuonly
+
+  # pip-only packages
   - pip:
-    - fair-esm
-    - biopython
-    - transformers
+    - fair-esm              # ESM-2 protein embeddings
+    - biopython             # sequence parsing utilities
+    - transformers          # HuggingFace transformers
+    - datasets              # HuggingFace datasets (for our data download)
+    - accelerate            # training utilities
