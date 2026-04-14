@@ -26,6 +26,8 @@ dependencies:
   - torchvision
   - cpuonly
 
+  - conda-forge::sentencepiece
+
   # pip-only packages
   - pip:
     - fair-esm              # ESM-2 protein embeddings
